@@ -2,14 +2,14 @@ function initMap(): void {
   const map = new google.maps.Map(
     document.getElementById("map") as HTMLElement,
     {
-      zoom: 11,
-      center: { lat: 62.323907, lng: -150.109291 },
+      zoom: 17.75,
+      center: { lat: -23.426775164044184, lng: -51.92087721804098 },
     }
   );
 
   const bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(62.281819, -150.287132),
-    new google.maps.LatLng(62.400471, -150.005608)
+    new google.maps.LatLng(-23.429343475230542, -51.92468192415328),
+    new google.maps.LatLng(-23.424269087599974, -51.917107881260144)
   );
   // #1 - Trocar imagem
   const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/talkeetna.png";
