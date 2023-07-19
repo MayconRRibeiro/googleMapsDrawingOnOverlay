@@ -3,13 +3,15 @@ function initMap(): void {
     document.getElementById("map") as HTMLElement,
     {
       zoom: 17.75,
-      center: { lat: -23.426775164044184, lng: -51.92087721804098 },
+      center: { lat: -23.300526602358175, lng: -51.18327076600798 },
     }
   );
 
+  // [sul, oeste],
+  // [norte, leste],
   const bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(-23.429343475230542, -51.92468192415328),
-    new google.maps.LatLng(-23.424269087599974, -51.917107881260144)
+    new google.maps.LatLng(-23.30106732972232, -51.18407542871246),
+    new google.maps.LatLng(-23.300200194115565, -51.18166144059906)
   );
   // #1 - Trocar imagem
   const image = "https://developers.google.com/maps/documentation/javascript/examples/full/images/talkeetna.png";
@@ -98,7 +100,7 @@ function initMap(): void {
 
   drawingManager.setMap(map);
   google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
-    const coords = polygon.getPath().getArray().map(({lat, lng}) => ({lat: lat(), lng: lng()}));
+    const coords = polygon.getPath().getArray().map(({ lat, lng }) => ({ latitude: lat().toString(), longitude: lng().toString() }));
   
     console.log(JSON.stringify(coords, null, 1));
     // #2 - Salvar coordenadas aqui
